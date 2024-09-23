@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Importando o estilo do editor
 import './CreateProduct.css';
 
 const CreateProduct = () => {
@@ -79,10 +81,10 @@ const CreateProduct = () => {
           onChange={(e) => setFornecedor(e.target.value)}
           required
         />
-        <textarea
-          placeholder="Descrição"
+        <ReactQuill
           value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
+          onChange={setDescricao}
+          placeholder="Descrição"
           required
         />
         <input
